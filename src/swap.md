@@ -1,6 +1,6 @@
 # Better proposal of Array swap function.
 
-## Design
+## 1) Design
 ```
 Swap two elements in an array
 @since version
@@ -10,7 +10,7 @@ Swap two elements in an array
 @param {indexB} The index of the second element.
 ```
 
-## Pseudo Code
+## 2) Pseudo Code
     
     function swap(array, indexA, indexB){
         // Creating new array
@@ -18,7 +18,7 @@ Swap two elements in an array
         // Return new array
     }
 
-## Output
+## 3) Output
 
   + ### Basic
   + 
@@ -45,7 +45,7 @@ Swap two elements in an array
     => []
     ```
 
-## Test
+## 4) Test
 
   + ### Identity
     
@@ -75,7 +75,7 @@ Swap two elements in an array
   => [3, 1, 2]
   ```
 
-## Quality
+## 5) Quality
   + ### Data Immutability
   ```
   Since in creating this function user data is not changed.
@@ -83,8 +83,9 @@ Swap two elements in an array
   Data Immutability of FP is followed.
   ```
 
-## Ideas
+## 6) Ideas
 To create an object swap function which will swap the values of the given object.
+
     ```
     swap(object, keyA, keyB)
 
