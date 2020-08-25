@@ -86,10 +86,9 @@ Swap two elements in an array
 
 ## 6) Ideas
 To create an object swap function which will swap the values of given object.
-    ```
-    swap(object, keyA, keyB)
-
-    swap({ a: 1, b: 2}, 'a', 'b')
-    => { a:2, b:1 }
-    ```
+  ```
+  swap(object, keyA, keyB)
+  swap({ a: 1, b: 2}, 'a', 'b')
+  => { a:2, b:1 }
+  ```
 Inform us if you also want us to implement these ideas.
