@@ -21,7 +21,7 @@ Swap two elements in an array
 ## 3) Output
 
   + ### Basic
-  
+  + 
     ```
     swap([1,2,3], 0, 1)
     => [2,1,3]
@@ -40,7 +40,6 @@ Swap two elements in an array
     => [1,2,3]
     ```
   + ### Misc
-    In case of invalid input it will return empty array
     ```
     swap(undefined, indexA, indexB)
     => []
@@ -80,11 +79,12 @@ Swap two elements in an array
   + ### Data Immutability
   ```
   Since in creating this function user data is not changed.
-  As we will create new array of given array.
+  As we will create a new array of the given array.
   Data Immutability of FP is followed.
   ```
 
 ## 6) Ideas
+<<<<<<< HEAD
 To create an object swap function which will swap the values of given object.
   ```
   swap(object, keyA, keyB)
@@ -92,3 +92,14 @@ To create an object swap function which will swap the values of given object.
   => { a:2, b:1 }
   ```
 Inform us if you also want us to implement these ideas.
+=======
+To create an object swap function which will swap the values of the given object.
+
+    ```
+    swap(object, keyA, keyB)
+
+    swap({ a: 1, b: 2}, 'a', 'b')
+    => { a:2, b:1 }
+    ```
+Inform us if you also want us to implement these ideas.
+>>>>>>> 2517bedf897d84e70bbd4ad0103092d2de7fa209
