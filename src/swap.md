@@ -22,7 +22,8 @@ Swap two elements in an array
 ## 3) Output
 
 -   ### Basic
--   ```
+
+    ```
     swap([1,2,3], 0, 1)
     => [2,1,3]
 
