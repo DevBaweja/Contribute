@@ -15,19 +15,22 @@ Each output object is the input object with the value of the array field replace
 
 -   ### Basic
 
-```
-unwind([
-    { name: 'Francisco', hobbies: ['Hacking', 'Ice skating'] },
-    { name: 'Adelina', hobbies: ['Juggling', 'Graffiti', 'Painting'] },
-], 'hobbies');
-=> [
-    { name: 'Francisco', hobbies: 'Hacking'},
-    { name: 'Francisco', hobbies: 'Ice skating'},
+```js
+unwind(
+    [
+        { name: 'Francisco', hobbies: ['Hacking', 'Ice skating'] },
+        { name: 'Adelina', hobbies: ['Juggling', 'Graffiti', 'Painting'] },
+    ],
+    'hobbies'
+);
+// => [
+//     { name: 'Francisco', hobbies: 'Hacking'},
+//     { name: 'Francisco', hobbies: 'Ice skating'},
 
-    { name: 'Adelina', hobbies: 'Juggling'},
-    { name: 'Adelina', hobbies: 'Graffiti'},
-    { name: 'Adelina', hobbies: 'Painting'},
-]
+//     { name: 'Adelina', hobbies: 'Juggling'},
+//     { name: 'Adelina', hobbies: 'Graffiti'},
+//     { name: 'Adelina', hobbies: 'Painting'},
+// ]
 ```
 
 Inform us if you also want us to implement these ideas.
