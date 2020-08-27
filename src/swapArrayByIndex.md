@@ -13,7 +13,7 @@ Swap two elements in an array
 
 ## 2) Pseudo Code
 
-    function swap(array, indexA, indexB){
+    function swapArrayByIndex(array, indexA, indexB){
         // Creating new array
         // Swapping the new array elements of indexA and indexB
         // Return new array
@@ -24,27 +24,27 @@ Swap two elements in an array
 -   ### Basic
 
 ```
-swap([1,2,3], 0, 1)
+swapArrayByIndex([1,2,3], 0, 1)
 => [2,1,3]
 
-swap(['1','2','3'], 0, 1)
+swapArrayByIndex(['1','2','3'], 0, 1)
 => ['2','1','3']
 
-swap([{k1:'v1'}, {k2:'v2'}, {k3:'v3'}], 0, 1)
+swapArrayByIndex([{k1:'v1'}, {k2:'v2'}, {k3:'v3'}], 0, 1)
 => [{k2:'v2'} , {k1:'v1'}, {k3:'v3'}]
 ```
 
 -   ### Out of index
 
 ```
-swap([1,2,3], 0, 4)
+swapArrayByIndex([1,2,3], 0, 4)
 => [1,2,3]
 ```
 
 -   ### Misc
 
 ```
-swap(undefined, indexA, indexB)
+swapArrayByIndex(undefined, indexA, indexB)
 => []
 ```
 
@@ -55,7 +55,7 @@ swap(undefined, indexA, indexB)
 Follows identity when indexA and indexB are identical
 
 ```
-swap([1, 2, 3], 0, 0)
+swapArrayByIndex([1, 2, 3], 0, 0)
 => [1, 2, 3]
 ```
 
@@ -64,9 +64,9 @@ swap([1, 2, 3], 0, 0)
 Follows commutative when indexA and indexB are interchanged
 
 ```
-swap([1, 2, 3], 0, 1)
+swapArrayByIndex([1, 2, 3], 0, 1)
 => [1, 2, 3]
-swap([1, 2, 3], 1, 0)
+swapArrayByIndex([1, 2, 3], 1, 0)
 => [1, 2, 3]
 ```
 
@@ -75,9 +75,9 @@ swap([1, 2, 3], 1, 0)
 Doesn't Follow associative
 
 ```
-swap(swap([1, 2, 3], 0, 1), 1, 2)
+swapArrayByIndex(swapArrayByIndex([1, 2, 3], 0, 1), 1, 2)
 => [2, 3, 1]
-swap(swap([1, 2, 3], 1, 2), 0, 1)
+swapArrayByIndex(swapArrayByIndex([1, 2, 3], 1, 2), 0, 1)
 => [3, 1, 2]
 ```
 
@@ -96,8 +96,8 @@ Data Immutability of FP is followed.
 To create an object swap function which will swap the values of given object.
 
 ```
-swap(object, keyA, keyB)
-swap({ a: 1, b: 2}, 'a', 'b')
+swapArrayByIndex(object, keyA, keyB)
+swapArrayByIndex({ a: 1, b: 2}, 'a', 'b')
 => { a:2, b:1 }
 ```
 

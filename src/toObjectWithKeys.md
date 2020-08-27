@@ -53,6 +53,10 @@ if values are more it will be simply ignored.
 toObjectWithKeys([{}, {}], ['v1', 'v2'])
 => {}
 Since keys cann't be array or object
+
+toObjectWithKeys(['k1', 'k2', 'k1'], ['v1', 'v2', 'v3'])
+=> {k1: 'v3', k2:'v2'}
+Last instance of same key will contribute to creating object
 ```
 
 ## 4) Ideas
