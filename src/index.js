@@ -74,12 +74,13 @@ unwind('hobbies', {
 
 const key = 'hobbies';
 const object = {
-    name: 'foo',
-    hobbies: ['Golf', 'Hockey'],
+    name: 'alice',
+    hobbies: ['Golf', 'Hacking'],
+    colors: ['red', 'green'],
 };
 const unwind = (key, object) => {
     return object[key].reduce((acc, item) => {
-        acc = acc.push({ ...object, key: item });
+        acc.push({ ...object, [key]: item });
         return acc;
     }, []);
 };
