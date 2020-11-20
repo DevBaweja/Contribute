@@ -1,0 +1,65 @@
+0) Determine key and list.
+key <- 'hobby'
+list <- [
+    { name: 'alice', hobby: 'Hacking' },
+    { name: 'alice', hobby: 'Juggling' },
+]
+
+1) Make sure that key in input is String or any value that can form key for object.
+
+Correct: key <- 'hobby' 
+Correct: key <- 0 | any positive integer value
+Correct: key <- true | false
+
+Incorrect: key <- -1 | any negative integer value
+
+2) Make sure that key given is in list so that wind can occur properly.
+key <- 'hobby'
+list <- [
+    { name: 'alice', hobby: 'Hacking' },
+    { name: 'alice', hobby: 'Juggling' },
+]
+is correct as list[any index] have key as its property.
+
+Correct: result <-  {
+    name: 'alice', hobby: ['Hacking','Juggling']
+}
+
+3) Make sure that every item in list have all the same properties otherwise merge conflict will occur.
+key <- 'hobby'
+list <- [
+    { name: 'alice', hobby: 'Hacking' },
+    { age: 20 , hobby: 'Juggling' },
+]
+is incorrect as there will be merge conflict of name and age.
+
+4) Solving Merge conflict can be done by adding all the properties to the result
+
+key <- 'hobby'
+list <- [
+    { name: 'alice', hobby: 'Hacking' },
+    { age: 20 , hobby: 'Juggling' },
+]
+
+Correct: result <- {
+    name: 'alice', age: 20,
+    hobby: ['Hacking', 'Juggling' ]
+}
+
+5) If key is empty string or empty object.
+
+key <- '' | {}
+list <- [
+    { name: 'alice', hobby: 'Hacking' },
+    { name: 'alice', hobby: 'Juggling' },
+]
+
+
+Correct: result <- {
+    name: 'alice', hobby: 'Juggling'
+}
+
+6) No renaming of keys of object.
+
+key <- {hobbies: 'hobby'} || {hobby: 'hobby'}
+Simply treat it as no-op (no operation).

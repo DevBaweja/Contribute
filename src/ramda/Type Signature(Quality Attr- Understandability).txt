@@ -1,0 +1,12 @@
+unwind :: String -> Record -> [Record]
+
+This means that when given String it will return the function that will take Record and then it will give list of Record as its output.
+
+
+unwindAll :: List -> Record -> [Record]
+
+This means that when given List it will return the function that will take Record and then it will give list of Record as its output.
+
+wind :: String -> [Record] -> Record
+
+This means that when given String it will return the function that will take List of Record and then it will give Record as its output.

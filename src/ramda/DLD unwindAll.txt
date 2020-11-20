@@ -1,0 +1,39 @@
+1) Determine keys and object so as to get keys which is needed to unwind over the object.
+key <- ['hobbies','colors']
+object <- {
+    name: 'alice',
+    hobbies: ['Golf', 'Hacking'],
+    colors: ['red', 'green']
+}
+
+2) Need to map over the keys so as to obtain object[key]
+hobbies <- ['Golf', 'Hacking']
+colors <- ['red', 'green']
+
+3) While mapping over keys we need to unwind the object with key of each iteration.
+result_1 <- unwind('hobbies', object)
+result_2 <- unwind('colors', object)
+... 
+result_n 
+
+4) Initialize the result with empty list
+result <- [];
+
+5) Add all the result_1, result_2, ... result_n into result.
+result <- [result_1, result_2, ... result_n];
+
+6) In every iteration of mapping over keys. 
+
+In first iteration
+result <- [
+    unwind('hobbies', object)
+];
+In second iteration
+result <- [
+    unwind('hobbies', object),
+    unwind('colors', object)
+];
+Similarly, at end of it all the keys will be unwinded into its own individual object and added to the result list.
+
+7) Return the result as final output.
+return result

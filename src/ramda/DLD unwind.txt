@@ -1,0 +1,49 @@
+1) Determine key and object so as to get key which is needed to unwind over the object.
+key <- 'hobbies'
+object <- {
+    name: 'alice',
+    hobbies: ['Golf', 'Hacking'],
+    colors: ['red', 'green']
+}
+
+2) Need to reduce over the list named by object's key
+object[key] = ['Golf', 'Hacking'];
+
+3) reduce method executes a reducer function on each element of the list, resulting in single output final accumulator value.
+
+4) Initialize accumulator as empty list
+accumulator <- [];
+
+5) And by reducing over it is required to add the whole object into the accumulator
+accumulator <- [
+    object,
+    object
+];
+
+6) In every iteration of reducer function we need to replace the object[key] ie ['Golf', 'Hacking'] with each element of the list ie 'Golf' and 'Hacking'. 
+
+In first iteration
+accumulator <- [
+    {
+        name: 'alice',
+        hobbies: 'Golf',
+        colors: ['red', 'green']
+    },
+];
+In second iteration
+accumulator <- [
+    {
+        name: 'alice',
+        hobbies: 'Golf',
+        colors: ['red', 'green']
+    },
+    {
+        name: 'alice',
+        hobbies: 'Hacking',
+        colors: ['red', 'green']
+    }
+];
+Similarly, at end of it all the object[key] will be unwinded into its own individual object.
+
+7) Return the accumulator as final output.
+return accumulator

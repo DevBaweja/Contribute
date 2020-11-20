@@ -1,0 +1,52 @@
+List
+
+unwind
+unwind :: String -> Record -> [Record]
+
+This means that when given String it will return the function that will take Record and then it will give list of Record as its output.
+
+
+```js
+// @param {key} key by which object will be unwinded
+// @param {object} object to be unwinded
+unwind('hobbies', {
+    name: 'alice',
+    hobbies: ['Golf', 'Hacking'],
+    colors: ['red', 'green'],
+});
+// => [
+//      { name: 'alice', hobbies: 'Golf', colors: ['red', 'green'] },
+//      { name: 'alice', hobbies: 'Hacking', colors: ['red', 'green'] }
+// ]
+```
+key 
+Key to determine which property of the object should be unwind
+object
+Object containing list under property named as key which is to unwind
+
+unwind means separating group into multiple individual elements
+
+Returns list of object containing the value of input key having list replaced by each element in the object.
+
+See also unwindAll, wind.
+
+```js
+const xs = [
+    { name: 'Francisco', hobbies: ['Hacking', 'Ice skating'] },
+    { name: 'Adelina', hobbies: ['Juggling', 'Graffiti', 'Painting'] },
+];
+
+map(unwind('hobbies')(xs);
+// => [
+//     [
+//         { name: 'Francisco', hobbies: 'Hacking'},
+//         { name: 'Francisco', hobbies: 'Ice skating'},
+//     ],
+//     [
+//         { name: 'Adelina', hobbies: 'Juggling'},
+//         { name: 'Adelina', hobbies: 'Graffiti'},
+//         { name: 'Adelina', hobbies: 'Painting'},
+//     ]
+// ]
+// [{},{}] -> [ [{},{}], [{},{}] ]
+```

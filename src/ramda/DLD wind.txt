@@ -1,0 +1,33 @@
+1) Determine key and list so as to get key which is needed to wind the list into single object.
+key <- 'hobby'
+list <- [
+    { name: 'alice', hobby: 'Hacking' },
+    { name: 'alice', hobby: 'Juggling' },
+]
+
+2) Initialize an empty object with value of elemnent of the list
+object <- {
+    name: 'alice'
+}
+
+3) Initialize an empty list of list[key]
+hobby <- []
+
+4) Iterate over the list and then add each element to the empty list.
+
+5) While iterating over list we need to wind the object with key ie hobby.
+
+In first iteration
+hobby <- ['Hacking']
+In second iteration
+hobby <- ['Hacking', 'Juggling'] 
+
+Similarly, at end of it all the list element will be winded into single object.
+
+6) Add this list to the object under object[key]
+object <- {
+    name: 'alice', hobby: ['Hacking', 'Juggling']
+}
+
+7) Return the object as final output.
+return object

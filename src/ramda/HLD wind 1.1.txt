@@ -1,0 +1,27 @@
+List
+
+wind
+wind :: String -> [Record] -> Record
+
+This means that when given String it will return the function that will take List of Record and then it will give Record as its output.
+
+key
+Key to determine which property of the object should be wind
+
+list
+List containing element with property named as keys
+
+wind means combining multiple individual elements into one single group
+
+Returns object containing the value of each element with key replaced by single list.
+
+See also unwind, unwindAll
+```js
+// @param {key} key by which object will be winded
+// @param {object} object to be winded
+wind('hobby',[
+    { name: 'alice', hobby: 'Hacking' },
+    { name: 'alice', hobby: 'Juggling' },
+])
+// => { name: 'alice', hobby: ['Hacking', 'Juggling'] }
+```

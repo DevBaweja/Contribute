@@ -1,0 +1,45 @@
+List
+
+unwindAll
+unwindAll :: List -> Record -> [Record]
+
+This means that when given List it will return the function that will take Record and then it will give list of Record as its output.
+
+keys
+Keys to determine which properties of the object should be unwind
+object
+Object containing list under properties named as keys element which is to unwind
+
+unwind means separating group into multiple individual elements
+
+Returns list of object containing the value of input keys having list replaced by each element in the object.
+
+See also unwind, wind
+
+```js
+// @param {keys} keys by which object will be unwinded
+// @param {object} object to be unwinded
+unwindAll(['hobbies', 'colors'], {
+    name: 'alice',
+    hobbies: ['Golf', 'Hacking'],
+    colors: ['red', 'green'],
+});
+
+// => [
+//      { name: 'alice', hobbies: 'Golf', colors: 'red' },
+//      { name: 'alice', hobbies: 'Golf', colors: 'green' },
+//      { name: 'alice', hobbies: 'Hacking', colors: 'red' },
+//      { name: 'alice', hobbies: 'Hacking', colors: 'green' },
+// ]
+
+// => [
+//    [
+//        { name: 'alice', hobbies: 'Golf', colors: ['red', 'green'] },  
+//        { name: 'alice', hobbies: 'Hacking', colors:  ['red', 'green'] },
+//    ],
+//    [
+//        { name: 'alice', hobbies: ['Golf', 'Hacking'], colors: 'red' },  
+//        { name: 'alice', hobbies: ['Golf', 'Hacking'], colors:  'green' },
+//    ]
+// ]
+```

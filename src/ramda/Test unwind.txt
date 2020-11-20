@@ -1,0 +1,122 @@
+0) Determine key and object.
+key <- 'hobbies'
+object <- {
+    name: 'alice',
+    hobbies: ['Golf', 'Hacking'],
+    colors: ['red', 'green'],
+};
+
+1) Make sure that key in input is String or any value that can form key for object.
+
+Correct: key <- 'hobbies' 
+Correct: key <- 0 | any positive integer value
+Correct: key <- true | false
+
+Incorrect: key <- -1 | any negative integer value
+
+As they can form key for object
+object <- {
+    title: 'What is best programming language?'
+    0: 'Python',
+    1: 'Java',
+    2: 'JavaScript',
+    3: 'C++',
+    true: 'Correct Answer is C'
+}
+
+2) Make sure that key given is list in object so that unwind can occur properly.
+key <- 'hobbies'
+object <- {
+    name: 'alice',
+    hobbies: ['Golf', 'Hacking'],
+    colors: ['red', 'green'],
+};
+is correct as object[key] is ['Golf', 'Hacking'] is list and unwind can occur on it.
+Correct: result <- [
+    {
+        name: 'alice',
+        hobbies: 'Golf',
+        colors: ['red', 'green'],
+    },
+    {
+        name: 'alice',
+        hobbies: 'Hacking',
+        colors: ['red', 'green'],
+    }
+]
+
+Also in this case key <- 'colors' is also valid as it object[key] is ['red', 'green']
+Correct: result <- [
+    {
+        name: 'alice',
+        hobbies: ['Golf', 'Hacking'],
+        colors: 'red',
+    },
+    {
+        name: 'alice',
+        hobbies: ['Golf', 'Hacking'],
+        colors: 'green',
+    }
+]
+
+Incorrect: key <- 'name' will be invalid.
+
+3) Don't treat String as list
+
+key <- 'hobbies'
+object <- {
+    name: 'alice',
+    hobbies: 'Golf'
+}
+
+Incorrect: result <- [
+    { name: 'alice', hobbies: 'G'},
+    { name: 'alice', hobbies: 'G'},
+    { name: 'alice', hobbies: 'G'},
+    { name: 'alice', hobbies: 'G'},
+]
+
+Correct: result <- [
+    { name: 'alice', hobbies: 'Golf'}
+]
+
+4) Don't do anything if object[key] is not iterable (for now list only).
+
+In case where there is not property in object named as key.
+key <- 'hobbies'
+object <- { 
+    name: 'Fred', 
+    pastimes: ['Juggling', 'Sleeping'] 
+}
+
+Correct: result <- [ 
+    { name: 'Fred', pastimes: ['Juggling', 'Sleeping'] } 
+]
+
+In case where there is property in object named as key but it is not iterable
+
+object <- {
+    name: 'Barney',
+    hobbies: NaN
+}
+
+Correct: result <- [
+    { name: 'Barney', hobbies: NaN }
+]
+
+5) If key is empty string or empty object.
+
+key <- '' | {}
+object <- {
+    name: 'Barney',
+    hobbies: ['Golf', 'Hacking']
+}
+
+Correct: result <- [
+    { name: 'Barney' ,hobbies: ['Golf', 'Hacking'] }
+]
+
+6) No renaming of keys of object.
+
+key <- {hobbies: 'hobby'} || {hobby: 'hobby'}
+Simply treat it as no-op (no operation).
