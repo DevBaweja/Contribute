@@ -1,0 +1,56 @@
+1.	Testing for reduce (function, accumulator, list)
+
+Test 1 ->
+Input:
+var function = (accumulator, currentValue) => accumulator + currentValue;
+var accumulator = 0;
+var list = [ 1, 2, 3, 4 ];
+
+Function: reduce(function, accumulator, list) : accumulator
+
+Output:
+accumulator = 10
+
+Explaination: 
+Initially: 
+accumulator = 0
+
+First Iteration:
+accumulator = 0, currentValue = 1, accumulator = accumulator + currentValue
+accumulator = 1
+Second Iteration: 
+accumulator = 1, currentValue = 2, accumulator = accumulator + currentValue
+accumulator = 3
+Third Iteration: 
+accumulator = 3, currentValue = 3, accumulator = accumulator + currentValue
+accumulator = 6
+Fourth Iteration:
+accumulator = 6, currentValue = 4, accumulator = accumulator + currentValue
+accumulator = 10
+
+Visualisation:
+         -                10
+        / \              / \
+       -   4            6   4
+      / \              / \
+     -   3   ==>      3   3
+    / \              / \
+   -   2            1   2
+  / \              / \
+ 0   1            0   1
+
+
+Test 2 ->
+Input:
+var key = 'hobby';
+var function = (accumulator, currentItem) => accumulator.push( { key: currentItem } );
+var accumulator = [];
+var list = ['Golf', 'Hacking'];
+
+Function: reduce(function, accumulator, list) : accumulator
+
+Output:
+accumulator = [
+    { hobby: 'Golf' },
+    { hobby: 'Hacking' }
+]

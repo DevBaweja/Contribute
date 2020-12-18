@@ -1,0 +1,41 @@
+1.	Testing for map (function, list)
+
+Test 1 ->
+Input:
+var function = (currentValue) => return currentValue ^ 2;
+var list = [ 1, 2, 3, 4 ];
+
+Function: map(function, list) : doubleList
+
+Output:
+doubleList = [ 1, 4, 9, 16 ];
+
+Explaination: 
+Initially:
+doubleList = []
+
+First Iteration:
+currentValue = 1, doubleList = [ 1 ]
+
+Second Iteration: 
+currentValue = 2, doubleList = [ 1, 4 ]
+
+Third Iteration: 
+currentValue = 3, doubleList = [ 1, 4, 9 ]
+
+Fourth Iteration:
+currentValue = 4, doubleList = [ 1, 4, 9, 16 ]
+
+Test 2 ->
+Input:
+var key = 'hobby';
+var function = (currentItem) => return { key: currentItem };
+var list = ['Golf', 'Hacking'];
+
+Function: map(function, list) : mappedList
+
+Output:
+mappedList = [
+    { hobby: 'Golf' },
+    { hobby: 'Hacking' }
+]
