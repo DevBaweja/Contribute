@@ -1,0 +1,63 @@
+1. Testing for has (key, object)
+
+Test 1 ->
+Input:
+var key = 'name';
+var object = {
+    name: 'alice',
+};
+
+Function: has(key, object);
+
+Output: true
+
+
+Test 2 ->
+Input:
+var key = String other than 'name' | Integer  ;
+var object = {
+    name: 'alice',
+};
+
+Function: has(key, object);
+
+Output: false
+
+2. Testing for clone(object)
+
+Test 1 ->
+Input:
+var object = {
+    name: 'alice',
+    age: 20
+};
+
+Function: clone(object) : clonedObject;
+
+Output:
+clonedObject = {
+    name: 'alice',
+    age: 20
+}
+
+3. Testing for mergeRight(objectA, objectB)
+
+Test 1 ->
+Input:
+var objectA = { name: 'alice', age: 10 }
+var objectB = { age: 20 }
+
+Function: mergeRight(objectA, objectB) : rightlyMergedObject
+
+Output: 
+rightlyMergedObject = { name: 'fred', 'age': 20 };
+
+Test 2 ->
+Input:
+var objectA = { name: 'alice', age: 10 }
+var objectB = { age: 20 }
+
+Function: mergeRight(objectB, objectA) : leftlyMergedObject
+
+Output: 
+leftlyMergedObject = { name: 'fred', 'age': 10 };

@@ -1,0 +1,29 @@
+const R = require('ramda');
+const { has, clone, reduce, mergeRight } = R;
+var key = 'hobby';
+var list = [
+    { name: 'alice', age: 12, hobby: 'Hacking' },
+    { name: 'alice', hobby: 'Juggling', drink: true },
+    { name: 'bob', get: { merge: '0', hit: '1' } },
+    { get: { merge: '1' }, hobby: 'Guide', name: 'jake' },
+];
+
+var wind = function (key, list) {
+    var fn = function (acc, item) {
+        // Storing Previous Accumulated List for Key
+        var accKey = acc[key];
+        // Adding new item to List
+        if (has(key, item)) accKey.push(item[key]);
+
+        // Copying Previous Accumulated Object
+        var clonedAcc = clone(acc);
+        var mergedAcc = mergeRight(clonedAcc, item);
+        // Updating Accumulated List for Key
+        mergedAcc[key] = accKey;
+        return mergedAcc;
+    };
+
+    return reduce(fn, { [key]: [] }, list);
+};
+
+console.log(wind(key, list));

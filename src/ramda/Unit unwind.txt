@@ -1,0 +1,140 @@
+1.	Testing for has (key, object)
+
+Test 1 ->
+Input:
+var key = 'name';
+var object = {
+    name: 'alice',
+};
+
+Function: has(key, object);
+
+Output: true
+
+
+Test 2 ->
+Input:
+var key = String other than 'name' | Integer  ;
+var object = {
+    name: 'alice',
+};
+
+Function: has(key, object);
+
+Output: false
+
+
+2.	Testing for propIs (type, key, object)
+
+Test 1->
+Input:
+var type = Array
+var key = 'hobbies';
+var object = {
+    hobbies: ['Golf', 'Hacking'],
+};
+
+Function: propIs(type, key, object);
+
+Output:
+true
+
+
+Test 2 ->
+Input:
+var type = String | Integer | Float 
+var key = 'hobbies';
+var object = {
+    hobbies: ['Golf', 'Hacking'],
+};
+
+Function: propIs(key, object);
+
+Output:
+false
+
+3.	Testing for clone(object)
+
+Test 1 ->
+Input:
+var object = {
+    name: 'alice',
+    age: 20
+};
+
+Function: clone(object) : clonedObject;
+
+Output:
+clonedObject = {
+    name: 'alice',
+    age: 20
+}
+
+4.	Testing for dissoc (key, object)
+
+Test 1 ->
+Input:
+var key = 'age';
+var object = {
+    name: 'alice',
+    age: 20
+};
+
+Function: dissoc(key, object) : dissocObject
+
+Output:
+dissocObject = {
+    name: 'alice',
+}
+
+
+Test 2 ->
+Input:
+var key = String other than 'age' | Integer;
+var object = {
+    name: 'alice',
+    age: 20
+};
+
+Function: dissoc(key, object) : dissocObject
+
+Output:
+dissocObject = {
+    name: 'alice',
+    age: 20
+}
+
+
+5.	Testing for assoc (key, item, object)
+
+Test 1 ->
+Input:
+var key = 'age';
+var item = 20;
+var object = {
+    name: 'alice',
+};
+
+Function: assoc(key, item, object) : assocObject
+
+Output:
+assocObject = {
+    name: 'alice',
+    age: 20
+}
+
+
+Test 2 ->
+Input:
+var key = String other than 'age' | Integer;
+var item = 20;
+var object = {
+    name: 'alice',
+};
+
+Function: assoc(key, object) : assocObject
+
+Output:
+assocObject = {
+    name: 'alice',
+}
